@@ -1,7 +1,19 @@
 package main
 
-import "fmt"
+
+import (
+	"flag"
+	"fmt"
+)
+
+const VERSION ="1.0"
 
 func main() {
-	fmt.Printf("Hello, World!\n")
+	version := flag.Bool("v", false, "version du fichier")
+	flag.Parse()
+	if *version {
+		fmt.Println(VERSION)
+	}
+
+	fmt.Println("Hello, World!\n")
 }
